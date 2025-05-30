@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventario | HomeNet</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/indexv1.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+  <section class="squeletor">
+    <!-- Navegación -->
+    <nav></nav>
+
+    <!-- Contenido principal -->
+    <main class="Navegador">
+      <div class="wrapper">
+        <!-- Buscador -->
+        <div class="search-input">
+          <input type="text" id="search" placeholder="Búsqueda en el Inventario..." autocomplete="off" />
+          <div class="autocom-box"></div>
+          <div class="icon"><i class="fas fa-search"></i></div>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="botones-acciones">
+          <button id="agregarBtn" class="btn btn-azul">Agregar artículo</button>
+          <button id="exportarBtn">Exportar</button>
+          <button id="eliminarSeleccionadosBtn">Eliminar</button>
+        </div>
+
+        <!-- Formulario de agregar/editar artículo -->
+        <div id="formularioAgregar" style="display: none; margin-top: 20px;">
+          <form id="formAgregar" class="formulario-articulo">
+            <div class="imagen-wrapper">
+              <div class="imagen-inputs">
+                <input type="file" id="nuevaImagenFile" class="imagen-file" accept="image/*" />
+                <input type="text" id="nuevaImagen" placeholder="Enlace de imagen" class="campo-input imagen-url" required />
+              </div>
+              <div class="imagen-preview-container">
+                <img id="previewNuevaImagen" class="preview-imagen" src="" alt="Vista previa" />
+              </div>
+            </div>
+            <input type="text" id="nuevoCodigo" placeholder="Código" class="campo-input" required />
+            <input type="text" id="nuevaUbicacion" placeholder="Ubicación" class="campo-input" />
+            <input type="text" id="nuevaPotencia" placeholder="Potencia" class="campo-input" />
+            <input type="text" id="nuevasNotas" placeholder="Notas" class="campo-input" />
+            <div class="botones-formulario">
+              <button type="submit" class="btn btn-verde">Guardar</button>
+              <button type="button" id="btnBorrarFormulario" class="btn btn-rojo">Borrar</button>
+              <button type="button" id="btnCancelarFormulario" class="btn btn-gris">Cancelar</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Tabla de resultados -->
+        <div class="tabla-resultados">
+          <table id="resultados">
+            <thead>
+              <tr>
+                <th><input type="checkbox" id="checkTodos" /></th>
+                <th>Código</th>
+                <th>Imagen</th>
+                <th>Ubicación</th>
+                <th>Potencia</th>
+                <th>Notas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Filas generadas dinámicamente -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer></footer>
+  </section>
+
+  <!-- Scripts -->
+  <script src="/frontend/assets/js/autocompletarv1.js"></script>
+  <script src="/frontend/assets/js/indexv1.js"></script>
+  <script src="/frontend/assets/js/barradebusqueda.js"></script>
+  <script src="/frontend/assets/js/bton-agregar.js"></script>
+  <script src="/frontend/assets/js/bton-exportar.js"></script>
+  <script src="/frontend/assets/js/bton-eliminar.js"></script>
+  <script src="/frontend/assets/js/tabladeresultados.js"></script>
+  <script src="/frontend/https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  
+</body>
+</html>

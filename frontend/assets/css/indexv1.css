@@ -1,0 +1,369 @@
+/* ------------------ GENERAL ------------------ */
+/* Selección de texto */
+::selection {
+  color: #fff;
+  background: #664AFF;
+}
+
+/* Contenedor principal de la página */
+.wrapper {
+  max-width: 740px;
+  margin: 100px auto 20px auto;
+}
+
+/* ------------------ BUSCADOR ------------------ */
+/* Contenedor del buscador */
+.wrapper .search-input {
+  background: #fff;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
+}
+
+/* Input del buscador */
+.search-input input {
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+}
+
+/* Estado activo del input */
+.search-input.active input {
+  border-radius: 5px 5px 0 0;
+}
+
+/* Contenedor de autocompletado (oculto por defecto) */
+.search-input .autocom-box {
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+/* Estado activo del autocompletado */
+.search-input.active .autocom-box {
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Elementos sugeridos del autocompletado */
+.autocom-box li {
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+}
+
+/* Mostrar elementos sugeridos al activar */
+.search-input.active .autocom-box li {
+  display: block;
+}
+
+/* Hover sobre sugerencias */
+.autocom-box li:hover {
+  background: #efefef;
+}
+
+/* Ícono de lupa en el input */
+.search-input .icon {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 20px;
+  color: #644bff;
+  cursor: pointer;
+}
+
+/* ------------------ BOTONES DE ACCIONES ------------------ */
+/* Contenedor de botones debajo del buscador */
+.botones-acciones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+/* Estilos generales de los botones */
+.botones-acciones button {
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  background-color: #664AFF;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1;
+  margin: 0 5px;
+}
+
+/* Hover para botones */
+.botones-acciones button:hover {
+  background-color: #4836c2;
+}
+
+/* ------------------ FORMULARIO DE ARTÍCULO ------------------ */
+/* Contenedor general de formularios */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+/* Inputs y selects de formularios */
+.formulario input,
+.formulario select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* ------------------ TABLA DE RESULTADOS ------------------ */
+/* Contenedor de la tabla */
+.tabla-resultados {
+  max-width: 1000px;
+  margin: 30px auto 0 auto;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+  overflow-x: auto;
+}
+
+/* Estilos base de la tabla */
+#resultados {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Encabezado de la tabla */
+#resultados thead {
+  background-color: #664AFF;
+  color: #fff;
+}
+
+/* Celdas de encabezado y cuerpo */
+#resultados th,
+#resultados td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+}
+
+/* Hover sobre filas */
+#resultados tbody tr:hover {
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+/* Imágenes dentro de celdas */
+#resultados tbody td img {
+  max-width: 60px;
+  border-radius: 4px;
+}
+
+/* Estilo para los encabezados que son clickeables */
+#resultados th {
+  cursor: pointer; /* Cambia el cursor a la mano */
+  user-select: none; /* Evita la selección de texto */
+  transition: background-color 0.2s ease;
+}
+
+/* Efecto visual al pasar el mouse */
+#resultados th:hover {
+  background-color: #f0f0f0;
+  color: #664AFF;
+}
+
+
+/* ------------------ FILA DE EDICIÓN EN TABLA ------------------ */
+/* Fila adicional para edición */
+.fila-formulario {
+  background-color: #f9f9f9;
+}
+
+/* Celdas de fila de edición */
+.fila-formulario td {
+  padding: 15px;
+}
+
+/* Inputs de fila de edición */
+.fila-formulario input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+/* Botones dentro de fila de edición */
+.fila-formulario button {
+  padding: 8px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Botón guardar dentro de tabla */
+.btn-guardar {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Botón eliminar dentro de tabla */
+.btn-eliminar {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-cancelar {
+  background-color: #6c757d; /* gris medio */
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  margin-left: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-cancelar:hover {
+  background-color: #5a6268; /* gris más oscuro */
+}
+
+.imagen-wrapper {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.imagen-inputs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.imagen-preview-container {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-imagen {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+/* ------------------ FORMULARIO DE AGREGAR ------------------ */
+/* Estilo general del formulario de agregar artículo */
+#formularioAgregar {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 15px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Inputs del formulario de agregar */
+#formularioAgregar .campo-input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#formularioAgregar input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Contenedor de botones del formulario */
+#formularioAgregar .botones-formulario button {
+  padding: 8px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* Botón Guardar */
+#formularioAgregar .btn-verde {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Botón Borrar */
+#formularioAgregar .btn-rojo {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Botón Cancelar del formulario de agregar artículo */
+.btn-gris {
+  background-color: #6c757d; /* Gris neutro */
+  color: white;
+}
+
+.imagen-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.imagen-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+
+.formulario-articulo input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.imagen-preview-container {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.preview-imagen {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
